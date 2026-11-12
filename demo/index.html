@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mordslop demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #1b1d22; color: #eee; font: 14px/1.4 system-ui, sans-serif; }
+      canvas { display: block; }
+      [hidden] { display: none !important; }
+      #hud { position: fixed; left: 16px; bottom: 16px; display: grid; gap: 6px; pointer-events: none; }
+      .bar { width: 220px; height: 10px; background: #0008; border-radius: 3px; overflow: hidden; }
+      .bar i { display: block; height: 100%; }
+      #hp i { background: #d6453b; }
+      #st i { background: #e8c547; }
+      #foe { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); display: grid; gap: 4px; justify-items: center; pointer-events: none; }
+      #log { position: fixed; right: 16px; bottom: 16px; text-align: right; opacity: 0.85; pointer-events: none; }
+      #start { position: fixed; inset: 0; display: grid; place-items: center; background: #0009; cursor: pointer; text-align: center; }
+      #start b { font-size: 28px; display: block; margin-bottom: 8px; }
+      #cross { position: fixed; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: #fff8; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="cross"></div>
+    <div id="foe"><span id="foeState"></span><div class="bar" id="foeHp"><i style="background:#d6453b"></i></div></div>
+    <div id="hud"><span id="me"></span><div class="bar" id="hp"><i></i></div><div class="bar" id="st"><i></i></div></div>
+    <div id="log"></div>
+    <div id="start">
+      <div>
+        <b>mordslop</b>
+        Click to fight<br /><br />
+        Left click: slash from the side your mouse moves · Wheel up / down: stab / overhead<br />
+        Right click: parry (as their blow comes) · Q: feint · Middle click: kick<br />
+        WASD move · Shift sprint · Space jump · C crouch
+      </div>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
